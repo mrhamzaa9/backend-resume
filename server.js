@@ -23,10 +23,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // routes
 
+const Authapi = require("./routes/authroute");
 
 
-
-
+app.use("/api/auth", Authapi);
 const PORT = process.env.API_PORT ;
 app.listen(PORT, () => {
   console.log(`API  running on ${PORT}`);
