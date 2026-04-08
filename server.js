@@ -24,9 +24,12 @@ app.use(bodyParser.json());
 // routes
 
 const Authapi = require("./routes/authroute");
-
-
+const Resumeapi = require("./routes/resumeroute");
 app.use("/api/auth", Authapi);
+app.use("/api/resumes", Resumeapi);
+
+
+
 const PORT = process.env.API_PORT ;
 app.listen(PORT, () => {
   console.log(`API  running on ${PORT}`);
